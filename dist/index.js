@@ -28,7 +28,7 @@ class Index {
     }
 }
 __decorate([
-    core_1.Post("/wall"),
+    core_1.Get("/wall"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)

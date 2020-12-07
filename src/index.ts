@@ -1,9 +1,9 @@
-import {Post, Start} from '@oneline/core';
+import {Get, Start} from '@oneline/core';
 
 const start = new Start();
 
 class Index {
-  @Post("/wall")
+  @Get("/wall")
   public async wall() {
      return "hello";
   }
