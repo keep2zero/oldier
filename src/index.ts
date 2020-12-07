@@ -9,6 +9,6 @@ class Index {
   }
 }
 
-start.start(80, ()=>{
+start.start(parseInt(process.env.PORT||"5000") || 5000, ()=>{
     console.log("启动成功");
 })
