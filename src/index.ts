@@ -9,6 +9,6 @@ class Index {
   }
 }
 
-start.start(5000, ()=>{
+start.start(80, ()=>{
     console.log("启动成功");
 })
