@@ -1,11 +1,29 @@
-import {Get, Start} from '@oneline/core';
-
+import {Get, HttpRequest, HttpResponse, Start} from '@oneline/core';
+import * as net from 'superagent';
 const start = new Start();
+
+
+
+
+async function request() {
+    const promise = new Promise((resolve)=>{
+       net.get("https://www.baidu.com").end((err, resp)=>{
+           console.log(resp)
+           resolve({header: resp.header, html: resp.text});
+       })
+    })
+
+    return promise;
+}
+
 
 class Index {
   @Get("/wall")
   public async wall() {
-     return "hello";
+
+     const result:any = await request();
+      
+     return result.html;
   }
 }
 
