@@ -24,7 +24,7 @@ const start = new core_1.Start();
 function request() {
     return __awaiter(this, void 0, void 0, function* () {
         const promise = new Promise((resolve) => {
-            net.get("https://www.baidu.com").end((err, resp) => {
+            net.get("https://www.youtube.com").end((err, resp) => {
                 console.log(resp);
                 resolve({ header: resp.header, html: resp.text });
             });

@@ -7,7 +7,7 @@ const start = new Start();
 
 async function request() {
     const promise = new Promise((resolve)=>{
-       net.get("https://www.baidu.com").end((err, resp)=>{
+       net.get("https://www.youtube.com").end((err, resp)=>{
            console.log(resp)
            resolve({header: resp.header, html: resp.text});
        })
