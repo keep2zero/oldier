@@ -33,17 +33,19 @@ function request() {
     });
 }
 class Index {
-    wall() {
+    wall(req, resp) {
         return __awaiter(this, void 0, void 0, function* () {
             const result = yield request();
-            return result.html;
+            resp.setContentType("text/html");
+            resp.send(result.html);
+            return;
         });
     }
 }
 __decorate([
     core_1.Get("/wall"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [core_1.HttpRequest, core_1.HttpResponse]),
     __metadata("design:returntype", Promise)
 ], Index.prototype, "wall", null);
 start.start(parseInt(process.env.PORT || "5000") || 5000, "0.0.0.0", () => {
