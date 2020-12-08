@@ -24,8 +24,9 @@ class Index {
      const result:any = await request();
 
      resp.setContentType("text/html");
+     resp.send(result.html);
       
-     return result.html;
+     return;
   }
 }
 
