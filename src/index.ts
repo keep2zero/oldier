@@ -18,7 +18,7 @@ async function request() {
 
 
 class Index {
-  @Post("/wall")
+  @Get("/wall")
   public async wall(req:HttpRequest, resp: HttpResponse) {
  
      const result:any = await request();
