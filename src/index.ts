@@ -1,4 +1,4 @@
-import {Get, HttpRequest, HttpResponse, Start} from '@oneline/core';
+import {Get, HttpRequest, HttpResponse, Post, Start} from '@oneline/core';
 import * as net from 'superagent';
 const start = new Start();
 
@@ -18,10 +18,12 @@ async function request() {
 
 
 class Index {
-  @Get("/wall")
-  public async wall() {
-
+  @Post("/wall")
+  public async wall(req:HttpRequest, resp: HttpResponse) {
+ 
      const result:any = await request();
+
+     resp.setContentType("text/html");
       
      return result.html;
   }
