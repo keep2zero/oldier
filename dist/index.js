@@ -33,6 +33,7 @@ function request() {
     });
 }
 class Index {
+    // url, query, method, body, header
     wall(req, resp) {
         return __awaiter(this, void 0, void 0, function* () {
             const result = yield request();
@@ -43,7 +44,7 @@ class Index {
     }
 }
 __decorate([
-    core_1.Get("/wall"),
+    core_1.Post("/wall"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [core_1.HttpRequest, core_1.HttpResponse]),
     __metadata("design:returntype", Promise)

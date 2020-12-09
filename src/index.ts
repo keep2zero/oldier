@@ -13,14 +13,19 @@ async function request() {
        })
     })
 
+     
+
     return promise;
 }
 
 
 class Index {
-  @Get("/wall")
+
+
+  // url, query, method, body, header
+  @Post("/wall")
   public async wall(req:HttpRequest, resp: HttpResponse) {
- 
+
      const result:any = await request();
 
      resp.setContentType("text/html");
